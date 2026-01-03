@@ -48,7 +48,6 @@ export default function Navbar() {
               </div>
 
               <div className="md:hidden flex items-center">
-                {/* Zmiana: Disclosure.Button -> DisclosureButton */}
                 <DisclosureButton className="inline-flex items-center justify-center p-2 text-[#E5E7EB] hover:bg-gray-800 rounded-md focus:outline-none">
                   {open ? (
                     <X className="block h-6 w-6" aria-hidden="true" />
@@ -60,11 +59,9 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Zmiana: Disclosure.Panel -> DisclosurePanel */}
           <DisclosurePanel className="md:hidden bg-[#1f2937] border-t border-gray-700">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
-                /* Zmiana: Disclosure.Button -> DisclosureButton */
                 <DisclosureButton
                   key={link.name}
                   as={Link}

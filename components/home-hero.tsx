@@ -6,6 +6,8 @@ import * as THREE from "three";
 // @ts-ignore
 import NET from "vanta/dist/vanta.net.min";
 import { fadeIn, staggerContainer } from "@/constants/motion";
+import { ButtonLink } from "@/constants/button-link";
+import Button from "./ui/button";
 
 export function HeroSection() {
   const vantaRef = useRef<HTMLDivElement>(null);
@@ -41,13 +43,10 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#111827]">
-      {/* Tło Vanta */}
       <div ref={vantaRef} className="absolute inset-0 z-0" />
 
-      {/* Overlay - lekka warstwa przyciemniająca dla kontrastu */}
       <div className="absolute inset-0 z-[1] bg-black/40 pointer-events-none" />
 
-      {/* Kontener z tekstem - ZWIĘKSZONY Z-INDEX */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center">
         <motion.div
           variants={staggerContainer(0.2, 0.1)}
@@ -79,18 +78,15 @@ export function HeroSection() {
             A showcase of my projects, skills, and achievements in the field of
             software engineering.
           </motion.p>
-
+          {ButtonLink.map((button) => (
+            <Button key={button.src} href={button.src} icon={button.icon}>
+              {button.text}
+            </Button>
+          ))}
           <motion.div
             variants={fadeIn("up", "tween", 0.8, 1)}
             className="mt-10 flex gap-4 justify-center"
-          >
-            <button className="px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all cursor-pointer">
-              View Projects
-            </button>
-            <button className="px-8 py-3 border border-gray-600 text-white rounded-full font-medium hover:bg-white/10 transition-all cursor-pointer">
-              Contact Me
-            </button>
-          </motion.div>
+          ></motion.div>
         </motion.div>
       </div>
 
