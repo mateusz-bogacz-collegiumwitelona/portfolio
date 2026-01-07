@@ -6,7 +6,7 @@ import * as THREE from "three";
 // @ts-ignore
 import NET from "vanta/dist/vanta.net.min";
 import { fadeIn, staggerContainer } from "@/constants/motion";
-import { ButtonLink } from "@/constants/button-link";
+import { ButtonLink } from "@/constants/buttonLink";
 import Button from "../ui/button";
 
 export function HeroSection() {
