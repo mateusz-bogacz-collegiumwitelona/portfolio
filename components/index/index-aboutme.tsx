@@ -14,7 +14,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="relative bg-[#111827] py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative bg-[#111827] pt-24 pb-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <motion.div
         variants={staggerContainer(0.2, 0.1)}
         initial="hidden"
