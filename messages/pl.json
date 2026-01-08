@@ -1,5 +1,11 @@
 {
   "Footer": {
-    "description": "Student Informatyki z pasją do DevOps i IoT. Buduję nowoczesne rozwiązania i stale poszerzam swoje horyzonty."
+    "description": "Student Informatyki z pasją do DevOps i IoT. Buduję nowoczesne rozwiązania i stale poszerzam swoje horyzonty.",
+    "navigation": "Nawigacja",
+    "home": "Strona Główna",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "contact": "Znajdź mnie",
+    "info": "Mateusz Bogacz-Drewniak. Zbudowane z Next.js i Tailwind."
   }
 }

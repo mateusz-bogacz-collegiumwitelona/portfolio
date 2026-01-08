@@ -1,5 +1,11 @@
 {
   "Footer": {
-    "description": "A computer science student with a passion for DevOps and IoT. I build modern solutions and constantly broaden my horizons."
+    "description": "A computer science student with a passion for DevOps and IoT. I build modern solutions and constantly broaden my horizons.",
+    "navigation": "Navigation",
+    "home": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Find Me",
+    "info": "Mateusz Bogacz-Drewniak. Built with Next.js and Tailwind."
   }
 }

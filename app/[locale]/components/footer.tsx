@@ -23,13 +23,13 @@ export default async function Footer() {
 
           <div className="space-y-4">
             <h3 className="text-blue-600 dark:text-blue-400 font-mono text-xs uppercase tracking-widest font-bold transition-colors">
-              Nawigacja
+              {t("navigation")}
             </h3>
             <ul className="space-y-2">
               {[
-                { name: "Home", href: "/" },
-                { name: "O mnie", href: "/about" },
-                { name: "Projekty", href: "/projects" },
+                { name: t("home"), href: "/" },
+                { name: t("about"), href: "/about" },
+                { name: t("projects"), href: "/projects" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -45,7 +45,7 @@ export default async function Footer() {
 
           <div className="space-y-4">
             <h3 className="text-purple-600 dark:text-purple-400 font-mono text-xs uppercase tracking-widest font-bold transition-colors">
-              Znajdź mnie
+              {t("contact")}
             </h3>
             <div className="flex space-x-4">
               <a
@@ -70,8 +70,7 @@ export default async function Footer() {
 
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 transition-colors">
           <p className="text-gray-500 dark:text-gray-500 text-xs font-mono">
-            © {currentYear} Mateusz Bogacz-Drewniak. Built with Next.js &
-            Tailwind.
+            © {currentYear} {t("info")}
           </p>
         </div>
       </div>
