@@ -13,7 +13,7 @@ import {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#111827] pt-8 pb-10 px-4 sm:px-8">
+    <main className="min-h-screen bg-[#111827] pt-24 pb-12 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={staggerContainer(0.1, 0.1)}
