@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/constants/motion";
+import { fadeIn, staggerContainer } from "@/app/constants/motion";
 import Button from "../ui/button";
 import { ArrowRight } from "lucide-react";
 

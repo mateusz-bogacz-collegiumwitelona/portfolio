@@ -9,7 +9,7 @@ import {
 import { Moon, Languages, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks } from "@/constants/navigation";
+import { navLinks } from "@/app/constants/navigation";
 
 export default function Navbar() {
   return (

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import * as THREE from "three";
 // @ts-ignore
 import NET from "vanta/dist/vanta.net.min";
-import { fadeIn, staggerContainer } from "@/constants/motion";
-import { ButtonLink } from "@/constants/buttonLink";
+import { fadeIn, staggerContainer } from "@/app/constants/motion";
+import { ButtonLink } from "@/app/constants/buttonLink";
 import Button from "../ui/button";
 
 export function HeroSection() {
