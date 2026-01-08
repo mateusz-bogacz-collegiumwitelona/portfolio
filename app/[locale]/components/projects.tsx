@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/app/constants/motion";
+import { fadeIn, staggerContainer } from "@/app/[locale]/constants/motion";
 import { Github, ExternalLink, Code2, CodeXml } from "lucide-react";
 import Button from "./ui/button";
 

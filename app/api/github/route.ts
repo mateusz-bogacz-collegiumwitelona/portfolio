@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { GithubParam } from "@/app/constants/github";
+import { GithubParam } from "@/app/[locale]/constants/github";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

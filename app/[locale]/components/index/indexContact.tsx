@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/app/constants/motion";
+import { fadeIn, staggerContainer } from "@/app/[locale]/constants/motion";
 import {
   Mail,
   User,
@@ -11,7 +11,7 @@ import {
   Github,
   Linkedin,
 } from "lucide-react";
-import { socialLinks } from "@/app/constants/socialLinks";
+import { socialLinks } from "@/app/[locale]/constants/socialLinks";
 
 export default function IndexContact() {
   const [status, setStatus] = useState<

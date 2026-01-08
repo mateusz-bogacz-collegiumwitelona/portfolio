@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/app/constants/motion";
+import { fadeIn, staggerContainer } from "@/app/[locale]/constants/motion";
 import {
   FileText,
   Download,

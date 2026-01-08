@@ -8,9 +8,10 @@ import {
 import { Moon, Languages, Menu, X, Sun } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks } from "@/app/constants/navigation";
+import { navLinks } from "@/app/[locale]/constants/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import LanguageSwitch from "./languageSwitch";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -66,9 +67,7 @@ export default function Navbar() {
                   >
                     {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                   </button>
-                  <button className="p-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-                    <Languages size={20} />
-                  </button>
+                  <LanguageSwitch />
                 </div>
               </div>
 
@@ -108,7 +107,7 @@ export default function Navbar() {
                   )}
                 </button>
                 <button className="flex items-center gap-2 p-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  <Languages size={20} /> Lang
+                  <LanguageSwitch /> Lang
                 </button>
               </div>
             </div>

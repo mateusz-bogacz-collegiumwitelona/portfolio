@@ -1,9 +1,12 @@
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { socialLinks } from "../constants/socialLinks";
+import { getTranslations } from "next-intl/server";
 
-export default function Footer() {
+export default async function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const t = await getTranslations("Footer");
 
   return (
     <footer className="bg-gray-50 dark:bg-[#111827] border-t border-gray-200 dark:border-gray-800 pt-16 pb-8 px-4 transition-colors duration-300">
@@ -14,8 +17,7 @@ export default function Footer() {
               Mateusz.dev
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs transition-colors">
-              Student Informatyki z pasją do DevOps i IoT. Buduję nowoczesne
-              rozwiązania i stale poszerzam swoje horyzonty.
+              {t("description")}
             </p>
           </div>
 

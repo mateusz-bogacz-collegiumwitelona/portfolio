@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import ScrollToAnchor from "./components/scrollToAnchor";
 import { Suspense } from "react";
 import { ThemeProvider } from "./components/themeProvider";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,13 +25,20 @@ export const metadata: Metadata = {
   description: "Portfolio studenta Informatyki",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!["en", "pl"].includes(locale)) notFound();
+
+  const messages = await getMessages();
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`
           ${geistSans.variable} ${geistMono.variable} antialiased 
@@ -37,14 +47,16 @@ export default function RootLayout({
           text-gray-900 dark:text-[#E5E7EB]
         `}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Suspense fallback={null}>
-            <ScrollToAnchor />
-          </Suspense>
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            <Suspense fallback={null}>
+              <ScrollToAnchor />
+            </Suspense>
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

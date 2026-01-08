@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export default function ScrollToAnchor() {
@@ -8,18 +8,20 @@ export default function ScrollToAnchor() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const scrollToHash = () => {
+    const handleScroll = () => {
       const hash = window.location.hash;
-
       if (hash) {
         const id = hash.replace("#", "");
         const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: "smooth" });
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
-
-      scrollToHash();
-      const timeout = setTimeout(scrollToHash, 500);
     };
+
+    handleScroll();
+    const timeout = setTimeout(handleScroll, 500);
+    return () => clearTimeout(timeout);
   }, [pathname, searchParams]);
 
   return null;
