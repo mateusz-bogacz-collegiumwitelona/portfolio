@@ -40,8 +40,8 @@ export default function ProjectsSection({
 
   if (loading)
     return (
-      <div className="text-center py-20 text-blue-400 font-mono animate-pulse">
-        {isFullList ? "Loading full portfolio..." : "Fetching featured work..."}
+      <div className="min-h-[600px] flex items-center justify-center text-blue-400 font-mono">
+        Fetching your work...
       </div>
     );
 

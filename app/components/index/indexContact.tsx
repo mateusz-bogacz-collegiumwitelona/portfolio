@@ -11,6 +11,7 @@ import {
   Github,
   Linkedin,
 } from "lucide-react";
+import { socialLinks } from "@/app/constants/socialLinks";
 
 export default function IndexContact() {
   const [status, setStatus] = useState<
@@ -43,9 +44,11 @@ export default function IndexContact() {
       console.error("Form submission error:", error);
     }
   }
-
   return (
-    <section className="relative bg-[#111827] pt-10 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="contact"
+      className="scroll-mt-24 relative bg-[#111827] pt-10 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <motion.div
         variants={staggerContainer(0.2, 0.1)}
         initial="hidden"
@@ -76,7 +79,7 @@ export default function IndexContact() {
 
             <div className="flex gap-6">
               <a
-                href="https://github.com/mateusz-bogacz-collegiumwitelona"
+                href={socialLinks.github.href}
                 target="_blank"
                 rel="noreferrer"
                 className="p-4 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-blue-500 hover:text-blue-400 transition-all text-white"
@@ -84,7 +87,7 @@ export default function IndexContact() {
                 <Github size={32} />
               </a>
               <a
-                href="https://www.linkedin.com/in/mateusz-bogacz-drewniak-a981a034a"
+                href={socialLinks.linkedin.href}
                 target="_blank"
                 rel="noreferrer"
                 className="p-4 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-blue-500 hover:text-blue-400 transition-all text-white"

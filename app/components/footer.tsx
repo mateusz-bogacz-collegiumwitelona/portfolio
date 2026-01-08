@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { socialLinks } from "../constants/socialLinks";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,7 +9,6 @@ export default function Footer() {
     <footer className="bg-[#111827] border-t border-gray-800 pt-16 pb-8 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* O mnie / Info */}
           <div className="space-y-4">
             <h3 className="text-white font-bold text-lg italic">Mateusz.dev</h3>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
@@ -55,24 +55,18 @@ export default function Footer() {
             </h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/mateusz-bogacz-collegiumwitelona"
+                href={socialLinks.github.href}
                 target="_blank"
                 className="p-2 bg-gray-800 rounded-lg text-gray-400 hover:text-white hover:bg-blue-600 transition-all"
               >
                 <Github size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/mateusz-bogacz-drewniak-a981a034a"
+                href={socialLinks.linkedin.href}
                 target="_blank"
                 className="p-2 bg-gray-800 rounded-lg text-gray-400 hover:text-white hover:bg-blue-600 transition-all"
               >
                 <Linkedin size={20} />
-              </a>
-              <a
-                href="mailto:twoj@email.com"
-                className="p-2 bg-gray-800 rounded-lg text-gray-400 hover:text-white hover:bg-blue-600 transition-all"
-              >
-                <Mail size={20} />
               </a>
             </div>
           </div>
