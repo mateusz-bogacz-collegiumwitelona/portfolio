@@ -15,8 +15,9 @@ import { useTranslations } from "next-intl";
 export default function AboutPage() {
   const t = useTranslations("AboutMe.page");
   const tCards = useTranslations("AboutMe");
+  const cvFileName = t("cvFile");
+  const cvPath = `/resource/${cvFileName}`;
 
-  // Mapowanie kart z wykorzystaniem kluczy z JSON
   const infoCards = [
     {
       icon: GraduationCap,
@@ -144,8 +145,8 @@ export default function AboutPage() {
                   {t("cvTitle")}
                 </h3>
                 <a
-                  href="/resource/Mateusz_Bogacz_Drewniak_PL.pdf"
-                  download
+                  href={cvPath}
+                  download={cvFileName}
                   className="flex items-center gap-2 text-sm font-mono text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors font-bold"
                 >
                   <Download size={18} /> {t("download")}
@@ -154,9 +155,9 @@ export default function AboutPage() {
 
               <div className="relative aspect-[1/1.4] w-full bg-white dark:bg-gray-950 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-colors">
                 <iframe
-                  src="/resource/Mateusz_Bogacz_Drewniak_PL.pdf#view=FitH&toolbar=0"
+                  src={`${cvPath}#view=FitH&toolbar=0`}
                   className="w-full h-full border-none"
-                  title="Podgląd CV"
+                  title={t("cvPreview")}
                 />
 
                 <div className="absolute inset-0 bg-white/95 dark:bg-gray-900/90 flex flex-col items-center justify-center p-8 text-center lg:hidden">
@@ -168,7 +169,7 @@ export default function AboutPage() {
                     {t("mobilePreview")}
                   </p>
                   <a
-                    href="/resource/Mateusz_Bogacz_Drewniak_PL.pdf"
+                    href="{cvPath}"
                     target="_blank"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg"
                   >

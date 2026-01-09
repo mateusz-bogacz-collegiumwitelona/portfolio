@@ -13,7 +13,8 @@ export const ButtonLink = [
   },
   {
     nameKey: "cv",
-    src: "/resource/Mateusz_Bogacz_Drewniak_PL.pdf",
+    src: "",
     icon: Download,
+    isCV: true,
   },
 ] as const;

@@ -90,11 +90,24 @@ export function HeroSection() {
           </motion.p>
 
           <div className="mt-10 flex flex-wrap gap-2 justify-center">
-            {ButtonLink.map((button) => (
-              <Button key={button.src} href={button.src} icon={button.icon}>
-                {t(button.nameKey)}
-              </Button>
-            ))}
+            {ButtonLink.map((button) => {
+              const isCVButton = "isCV" in button && button.isCV;
+
+              const finalHref = isCVButton
+                ? `/resource/${t("cvFile")}`
+                : button.src;
+
+              return (
+                <Button
+                  key={button.nameKey}
+                  href={finalHref}
+                  icon={button.icon}
+                  download={isCVButton ? t("cvFile") : undefined}
+                >
+                  {t(button.nameKey)}
+                </Button>
+              );
+            })}
           </div>
         </motion.div>
       </div>

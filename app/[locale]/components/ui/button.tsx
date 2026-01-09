@@ -6,6 +6,7 @@ interface ButtonProps {
   children: ReactNode;
   href: string;
   icon: LucideIcon;
+  download?: string;
 }
 
 export default function Button({

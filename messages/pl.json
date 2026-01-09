@@ -1,6 +1,6 @@
 {
   "Navbar": {
-    "home": "Strona Główna",
+    "home": "Start",
     "about": "O mnie",
     "projects": "Projekty",
     "contact": "Kontakt"
@@ -8,7 +8,7 @@
   "Footer": {
     "description": "Student Informatyki z pasją do DevOps i IoT. Buduję nowoczesne rozwiązania i stale poszerzam swoje horyzonty.",
     "navigation": "Nawigacja",
-    "home": "Strona Główna",
+    "home": "Start",
     "about": "O mnie",
     "projects": "Projekty",
     "contact": "Znajdź mnie",
@@ -33,7 +33,8 @@
     "description": "Prezentacja moich projektów, kompetencji oraz osiągnięć w dziedzinie inżynierii oprogramowania.",
     "projects": "Moje Projekty",
     "contact": "Kontakt",
-    "cv": "Pobierz CV"
+    "cv": "Pobierz CV",
+    "cvFile": "Mateusz_Bogacz_Drewniak_PL.pdf"
   },
   "Contact": {
     "contact": "Kontakt",
@@ -53,14 +54,19 @@
     "thankYou": " Dziękuję! Odpowiem tak szybko, jak to możliwe."
   },
   "AboutMe": {
-    "card1_title": "Edukacja",
-    "card1_data": "Informatyka, Collegium Witelona (III Rok)",
-    "card2_title": "Doświadczenie",
-    "card2_data": "Admin sieci & Help Desk, Drozapol-Profil S.A.",
-    "card3_title": "DevOps / Linux",
-    "card3_data": "Administracja serwerami, Bash, Sieci",
-    "card4_title": "IoT Projects",
-    "card4_data": "Raspberry Pi, Arduino, Embedded",
+    "badge": "Poznaj mnie",
+    "title": "O",
+    "me": "mnie",
+    "shortDescription": "Jestem studentem informatyki i pasjonatem nowoczesnych technologii. Łączę wiedzę akademicką z praktycznym doświadczeniem w administracji systemami oraz tworzeniu aplikacji webowych.",
+    "readMore": "Czytaj więcej",
+    "card1_title": "Status",
+    "card1_data": "Student II Roku",
+    "card2_title": "Kierunek",
+    "card2_data": "Inżynieria Informatyczna",
+    "card3_title": "Doświadczenie",
+    "card3_data": "Admin Sieci & Help Desk",
+    "card4_title": "Pasja",
+    "card4_data": "IoT & Systemy Linux",
     "page": {
       "subtitle": "Student & Deweloper",
       "title_main": "O",
@@ -70,6 +76,8 @@
       "p3": "Doświadczenie zawodowe zdobyłem podczas praktyk w <b2>{company}</b2>, gdzie zajmowałem się administracją sieci i serwerów oraz pełniłem rolę specjalisty Help Desk. Pozwoliło mi to rozwinąć umiejętności techniczne oraz kompetencje miękkie.",
       "p4": "W wolnym czasie zgłębiam systemy Linux oraz <purple>{iot}</purple>, pracując z Raspberry Pi, Arduino oraz ESP.",
       "cvTitle": "Życiorys (PDF)",
+      "cvFile": "Mateusz_Bogacz_Drewniak_PL.pdf",
+      "cvPreview": "Podgląd CV",
       "download": "Pobierz",
       "mobilePreview": "Podgląd PDF jest zoptymalizowany dla urządzeń desktopowych.",
       "openNewTab": "Otwórz CV w nowej karcie"
