@@ -1,4 +1,10 @@
 {
+  "Navbar": {
+    "home": "Strona Główna",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
   "Footer": {
     "description": "Student Informatyki z pasją do DevOps i IoT. Buduję nowoczesne rozwiązania i stale poszerzam swoje horyzonty.",
     "navigation": "Nawigacja",

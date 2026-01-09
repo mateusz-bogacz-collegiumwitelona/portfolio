@@ -5,15 +5,17 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { Moon, Languages, Menu, X, Sun } from "lucide-react";
+import { Moon, Menu, X, Sun } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { navLinks } from "@/app/[locale]/constants/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import LanguageSwitch from "./languageSwitch";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export default function Navbar() {
+  const t = useTranslations("Navbar");
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -52,11 +54,11 @@ export default function Navbar() {
               <div className="hidden md:flex items-center space-x-1">
                 {navLinks.map((link) => (
                   <Link
-                    key={link.name}
+                    key={link.nameKey}
                     href={link.href}
                     className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all rounded-lg hover:bg-gray-100 dark:hover:bg-white/5"
                   >
-                    {link.name}
+                    {t(link.nameKey)}{" "}
                   </Link>
                 ))}
 
@@ -83,12 +85,12 @@ export default function Navbar() {
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <DisclosureButton
-                  key={link.name}
+                  key={link.nameKey}
                   as={Link}
                   href={link.href}
                   className="block px-3 py-3 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-white/5 rounded-xl transition-colors"
                 >
-                  {link.name}
+                  {t(link.nameKey)}
                 </DisclosureButton>
               ))}
               <div className="flex items-center justify-around py-4 mt-4 border-t border-gray-200 dark:border-gray-800">
@@ -106,9 +108,9 @@ export default function Navbar() {
                     </>
                   )}
                 </button>
-                <button className="flex items-center gap-2 p-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <div className="flex items-center gap-2 p-2 text-gray-500 dark:text-gray-400">
                   <LanguageSwitch /> Lang
-                </button>
+                </div>
               </div>
             </div>
           </DisclosurePanel>

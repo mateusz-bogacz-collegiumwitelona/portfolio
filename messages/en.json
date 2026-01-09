@@ -1,4 +1,10 @@
 {
+  "Navbar": {
+    "home": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
   "Footer": {
     "description": "A computer science student with a passion for DevOps and IoT. I build modern solutions and constantly broaden my horizons.",
     "navigation": "Navigation",
