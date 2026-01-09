@@ -2,17 +2,17 @@ import { ArrowRight, Mail, Download } from "lucide-react";
 
 export const ButtonLink = [
   {
-    text: "View Projects",
+    nameKey: "projects",
     src: "/projects",
     icon: ArrowRight,
   },
   {
-    text: "Contact Me",
+    nameKey: "contact",
     src: "/#contact",
     icon: Mail,
   },
   {
-    text: "Download CV",
+    nameKey: "cv",
     src: "/resource/Mateusz_Bogacz_Drewniak_PL.pdf",
     icon: Download,
   },

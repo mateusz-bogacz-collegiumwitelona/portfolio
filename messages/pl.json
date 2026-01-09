@@ -25,5 +25,14 @@
     "defaultDescription": "Projekt osobisty stworzony przy użyciu nowoczesnych technologii.",
     "viewSource": "Zobacz źródło",
     "viewAll": "Zobacz wszystkie projekty"
+  },
+  "Hero": {
+    "title": "Student Inżynierii Informatycznej",
+    "name": "Mateusza",
+    "portfolio": "Portfolio",
+    "description": "Prezentacja moich projektów, kompetencji oraz osiągnięć w dziedzinie inżynierii oprogramowania.",
+    "projects": "Moje Projekty",
+    "contact": "Kontakt",
+    "cv": "Pobierz CV"
   }
 }

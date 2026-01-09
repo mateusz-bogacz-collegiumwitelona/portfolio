@@ -9,8 +9,11 @@ import { fadeIn, staggerContainer } from "@/app/[locale]/constants/motion";
 import { ButtonLink } from "@/app/[locale]/constants/buttonLink";
 import Button from "../ui/button";
 import { useTheme } from "next-themes";
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
+  const t = useTranslations("Hero");
+
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
   const { theme, resolvedTheme } = useTheme();
@@ -66,7 +69,7 @@ export function HeroSection() {
             variants={fadeIn("up", "tween", 0.2, 1)}
             className="text-blue-600 dark:text-blue-400 text-lg md:text-xl font-mono mb-4 tracking-widest uppercase transition-colors"
           >
-            Computer Science Engineering
+            {t("title")}
           </motion.h2>
 
           <motion.h1
@@ -74,23 +77,22 @@ export function HeroSection() {
             className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight transition-colors"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">
-              Mateusz's
+              {t("name")}
             </span>{" "}
-            Portfolio
+            {t("portfolio")}
           </motion.h1>
 
           <motion.p
             variants={fadeIn("up", "tween", 0.6, 1)}
             className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors"
           >
-            A showcase of my projects, skills, and achievements in the field of
-            software engineering.
+            {t("description")}
           </motion.p>
 
           <div className="mt-10 flex flex-wrap gap-2 justify-center">
             {ButtonLink.map((button) => (
               <Button key={button.src} href={button.src} icon={button.icon}>
-                {button.text}
+                {t(button.nameKey)}
               </Button>
             ))}
           </div>

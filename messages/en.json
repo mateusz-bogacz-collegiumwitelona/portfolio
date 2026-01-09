@@ -25,5 +25,14 @@
     "defaultDescription": "Personal project built with modern technologies.",
     "viewSource": "View Source",
     "viewAll": "View All Projects"
+  },
+  "Hero": {
+    "title": "Computer Science Engineering Student",
+    "name": "Mateusz's",
+    "portfolio": "Portfolio",
+    "description": "A showcase of my projects, skills, and achievements in the field of software engineering.",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "Download CV"
   }
 }
