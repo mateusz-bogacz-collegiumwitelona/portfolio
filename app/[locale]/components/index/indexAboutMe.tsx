@@ -4,13 +4,16 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/app/[locale]/constants/motion";
 import Button from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function AboutSection() {
+  const t = useTranslations("AboutMe");
+
   const educationData = [
-    { id: 1, title: "Education", school: "Collegium Witelona" },
-    { id: 2, title: "Education", school: "Collegium Witelona" },
-    { id: 3, title: "Education", school: "Collegium Witelona" },
-    { id: 4, title: "Education", school: "Collegium Witelona" },
+    { id: 1, title: t("card1_title"), data: t("card1_data") },
+    { id: 2, title: t("card2_title"), data: t("card2_data") },
+    { id: 3, title: t("card3_title"), data: t("card3_data") },
+    { id: 4, title: t("card4_title"), data: t("card4_data") },
   ];
 
   return (
@@ -26,12 +29,12 @@ export default function AboutSection() {
           <div className="flex-1 w-full order-2 lg:order-1">
             <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
               <h2 className="text-blue-600 dark:text-blue-400 text-sm md:text-base font-mono tracking-widest uppercase mb-2">
-                Get to know me
+                {t("badge")}
               </h2>
               <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-8 transition-colors">
-                About{" "}
+                {t("title")}{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">
-                  Me
+                  {t("me")}
                 </span>
               </h1>
             </motion.div>
@@ -40,9 +43,7 @@ export default function AboutSection() {
               variants={fadeIn("right", "tween", 0.4, 1)}
               className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl transition-colors"
             >
-              Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
-              faucibus ex sapien vitae pellentesque sem placerat. In id cursus
-              mi pretium tellus duis convallis.
+              {t("shortDescription")}
             </motion.p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -56,7 +57,7 @@ export default function AboutSection() {
                     {item.title}
                   </p>
                   <p className="text-gray-900 dark:text-white font-bold text-lg group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    {item.school}
+                    {item.data}
                   </p>
                 </motion.div>
               ))}
@@ -64,7 +65,7 @@ export default function AboutSection() {
 
             <motion.div variants={fadeIn("up", "tween", 0.6, 1)}>
               <Button href="/about" icon={ArrowRight}>
-                Read More
+                {t("readMore")}
               </Button>
             </motion.div>
           </div>

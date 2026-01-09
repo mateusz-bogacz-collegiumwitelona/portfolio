@@ -51,5 +51,28 @@
     "success": "Wiadomość wysłana!",
     "error": "Wystąpił błąd. Spróbuj ponownie.",
     "thankYou": " Dziękuję! Odpowiem tak szybko, jak to możliwe."
+  },
+  "AboutMe": {
+    "card1_title": "Edukacja",
+    "card1_data": "Informatyka, Collegium Witelona (III Rok)",
+    "card2_title": "Doświadczenie",
+    "card2_data": "Admin sieci & Help Desk, Drozapol-Profil S.A.",
+    "card3_title": "DevOps / Linux",
+    "card3_data": "Administracja serwerami, Bash, Sieci",
+    "card4_title": "IoT Projects",
+    "card4_data": "Raspberry Pi, Arduino, Embedded",
+    "page": {
+      "subtitle": "Student & Deweloper",
+      "title_main": "O",
+      "title_colored": "mnie",
+      "p1": "Witam, nazywam się <b1>{name}</b1>. Jestem studentem drugiego roku Informatyki na <blue>{school}</blue> w Legnicy.",
+      "p2": "Moje zainteresowania obejmują szeroki zakres dziedzin informatycznych, ze szczególnym naciskiem na <b2>{focus}</b2>. Rozwijam się również w Fullstack Development, czego przykładem jest to portfolio.",
+      "p3": "Doświadczenie zawodowe zdobyłem podczas praktyk w <b2>{company}</b2>, gdzie zajmowałem się administracją sieci i serwerów oraz pełniłem rolę specjalisty Help Desk. Pozwoliło mi to rozwinąć umiejętności techniczne oraz kompetencje miękkie.",
+      "p4": "W wolnym czasie zgłębiam systemy Linux oraz <purple>{iot}</purple>, pracując z Raspberry Pi, Arduino oraz ESP.",
+      "cvTitle": "Życiorys (PDF)",
+      "download": "Pobierz",
+      "mobilePreview": "Podgląd PDF jest zoptymalizowany dla urządzeń desktopowych.",
+      "openNewTab": "Otwórz CV w nowej karcie"
+    }
   }
 }

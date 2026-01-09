@@ -10,8 +10,40 @@ import {
   Cpu,
   Terminal,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
+  const t = useTranslations("AboutMe.page");
+  const tCards = useTranslations("AboutMe");
+
+  // Mapowanie kart z wykorzystaniem kluczy z JSON
+  const infoCards = [
+    {
+      icon: GraduationCap,
+      color: "text-blue-600 dark:text-blue-400",
+      title: tCards("card1_title"),
+      desc: tCards("card1_data"),
+    },
+    {
+      icon: Briefcase,
+      color: "text-purple-600 dark:text-purple-400",
+      title: tCards("card2_title"),
+      desc: tCards("card2_data"),
+    },
+    {
+      icon: Terminal,
+      color: "text-blue-600 dark:text-blue-400",
+      title: tCards("card3_title"),
+      desc: tCards("card3_data"),
+    },
+    {
+      icon: Cpu,
+      color: "text-purple-600 dark:text-purple-400",
+      title: tCards("card4_title"),
+      desc: tCards("card4_data"),
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-white dark:bg-[#111827] pt-24 pb-12 px-4 sm:px-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
@@ -24,52 +56,61 @@ export default function AboutPage() {
           <div className="space-y-10">
             <motion.div variants={fadeIn("right", "tween", 0.2, 1)}>
               <h2 className="text-blue-600 dark:text-blue-400 font-mono tracking-widest uppercase mb-2">
-                Student & Developer
+                {t("subtitle")}
               </h2>
               <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-8 transition-colors">
-                O{" "}
+                {t("title_main")}{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">
-                  mnie
+                  {t("title_colored")}
                 </span>
               </h1>
 
               <div className="space-y-6 text-gray-700 dark:text-gray-300 text-lg leading-relaxed transition-colors">
                 <p>
-                  Witam, nazywam się{" "}
-                  <span className="text-gray-900 dark:text-white font-semibold">
-                    Mateusz
-                  </span>
-                  . Jestem studentem drugiego roku Informatyki na{" "}
-                  <span className="text-blue-600 dark:text-blue-400 font-medium">
-                    Collegium Witelona
-                  </span>{" "}
-                  w Legnicy.
+                  {t.rich("p1", {
+                    name: "Mateusz",
+                    school: "Collegium Witelona",
+                    b1: (chunks) => (
+                      <span className="text-gray-900 dark:text-white font-semibold">
+                        {chunks}
+                      </span>
+                    ),
+                    blue: (chunks) => (
+                      <span className="text-blue-600 dark:text-blue-400 font-medium">
+                        {chunks}
+                      </span>
+                    ),
+                  })}
                 </p>
                 <p>
-                  Moje zainteresowania obejmują szeroki zakres dziedzin
-                  informatycznych, ze szczególnym naciskiem na
-                  <span className="text-gray-900 dark:text-white font-medium">
-                    {" "}
-                    DevOps oraz wsparcie techniczne
-                  </span>
-                  . Rozwijam się również w Fullstack Development, czego
-                  przykładem jest to portfolio.
+                  {t.rich("p2", {
+                    focus: "DevOps oraz wsparcie techniczne",
+                    b2: (chunks) => (
+                      <span className="text-gray-900 dark:text-white font-medium">
+                        {chunks}
+                      </span>
+                    ),
+                  })}
                 </p>
                 <p>
-                  Doświadczenie zawodowe zdobyłem podczas praktyk w{" "}
-                  <span className="text-gray-900 dark:text-white font-medium">
-                    Drozapol-Profil S.A.
-                  </span>
-                  , gdzie zajmowałem się administracją sieci i serwerów oraz
-                  pełniłem rolę specjalisty Help Desk. Pozwoliło mi to rozwinąć
-                  umiejętności techniczne oraz kompetencje miękkie.
+                  {t.rich("p3", {
+                    company: "Drozapol-Profil S.A.",
+                    b2: (chunks) => (
+                      <span className="text-gray-900 dark:text-white font-medium">
+                        {chunks}
+                      </span>
+                    ),
+                  })}
                 </p>
                 <p>
-                  W wolnym czasie zgłębiam systemy Linux oraz{" "}
-                  <span className="text-purple-600 dark:text-purple-400 font-medium">
-                    Internet of Things (IoT)
-                  </span>
-                  , pracując z Raspberry Pi, Arduino oraz ESP.
+                  {t.rich("p4", {
+                    iot: "Internet of Things (IoT)",
+                    purple: (chunks) => (
+                      <span className="text-purple-600 dark:text-purple-400 font-medium">
+                        {chunks}
+                      </span>
+                    ),
+                  })}
                 </p>
               </div>
             </motion.div>
@@ -78,32 +119,7 @@ export default function AboutPage() {
               variants={fadeIn("up", "tween", 0.4, 1)}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             >
-              {[
-                {
-                  icon: GraduationCap,
-                  color: "text-blue-600 dark:text-blue-400",
-                  title: "Edukacja",
-                  desc: "Informatyka, Collegium Witelona (II Rok)",
-                },
-                {
-                  icon: Briefcase,
-                  color: "text-purple-600 dark:text-purple-400",
-                  title: "Doświadczenie",
-                  desc: "Admin sieci & Help Desk, Drozapol-Profil S.A.",
-                },
-                {
-                  icon: Terminal,
-                  color: "text-blue-600 dark:text-blue-400",
-                  title: "DevOps / Linux",
-                  desc: "Administracja serwerami, Bash, Sieci",
-                },
-                {
-                  icon: Cpu,
-                  color: "text-purple-600 dark:text-purple-400",
-                  title: "IoT Projects",
-                  desc: "Raspberry Pi, Arduino, Embedded",
-                },
-              ].map((item, idx) => (
+              {infoCards.map((item, idx) => (
                 <div
                   key={idx}
                   className="bg-gray-50 dark:bg-gray-800/30 border border-gray-200 dark:border-gray-700 p-5 rounded-2xl hover:border-blue-500/50 transition-all shadow-sm dark:shadow-none"
@@ -125,14 +141,14 @@ export default function AboutPage() {
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                   <FileText className="text-blue-600 dark:text-blue-400" />{" "}
-                  Życiorys (PDF)
+                  {t("cvTitle")}
                 </h3>
                 <a
                   href="/resource/Mateusz_Bogacz_Drewniak_PL.pdf"
                   download
                   className="flex items-center gap-2 text-sm font-mono text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors font-bold"
                 >
-                  <Download size={18} /> Pobierz
+                  <Download size={18} /> {t("download")}
                 </a>
               </div>
 
@@ -149,13 +165,14 @@ export default function AboutPage() {
                     className="text-blue-600 dark:text-blue-400 mb-4"
                   />
                   <p className="text-gray-900 dark:text-white mb-6 font-medium">
-                    Podgląd PDF jest zoptymalizowany dla urządzeń desktopowych.
+                    {t("mobilePreview")}
                   </p>
                   <a
                     href="/resource/Mateusz_Bogacz_Drewniak_PL.pdf"
+                    target="_blank"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg"
                   >
-                    Otwórz CV w nowej karcie
+                    {t("openNewTab")}
                   </a>
                 </div>
               </div>

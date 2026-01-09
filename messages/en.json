@@ -51,5 +51,28 @@
     "success": "Message sent!",
     "error": "An error occurred. Please try again.",
     "thankYou": " Thank you! I will respond as soon as possible."
+  },
+  "AboutMe": {
+    "card1_title": "Education",
+    "card1_data": "Computer Science, Collegium Witelona (3nd Year)",
+    "card2_title": "Experience",
+    "card2_data": "Network Admin & Help Desk, Drozapol-Profil S.A.",
+    "card3_title": "DevOps / Linux",
+    "card3_data": "Server Administration, Bash, Networking",
+    "card4_title": "IoT Projects",
+    "card4_data": "Raspberry Pi, Arduino, Embedded",
+    "page": {
+      "subtitle": "Student & Developer",
+      "title_main": "About",
+      "title_colored": "Me",
+      "p1": "Hi, my name is <b1>{name}</b1>. I am a second-year Computer Science student at <blue>{school}</blue> in Legnica.",
+      "p2": "My interests cover a wide range of IT fields, with a particular focus on <b2>{focus}</b2>. I am also developing my skills in Fullstack Development, as demonstrated by this portfolio.",
+      "p3": "I gained professional experience during my internship at <b2>{company}</b2>, where I was responsible for network and server administration and served as a Help Desk specialist. This allowed me to develop both technical and soft skills.",
+      "p4": "In my spare time, I explore Linux systems and <purple>{iot}</purple>, working with Raspberry Pi, Arduino, and ESP.",
+      "cvTitle": "Resume (PDF)",
+      "download": "Download",
+      "mobilePreview": "PDF preview is optimized for desktop devices.",
+      "openNewTab": "Open CV in a new tab"
+    }
   }
 }
