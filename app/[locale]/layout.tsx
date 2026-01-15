@@ -21,8 +21,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mateusz Portfolio",
-  description: "Portfolio studenta Informatyki",
+  title: {
+    default: "Mateusz Bogacz Drewniak – strona osobista",
+    template: "%s – Mateusz Bogacz Drewniak",
+  },
+  description: "Mateusz Bogacz Drewniak – portfolio, projekty IT, kontakt",
+  alternates: {
+    canonical: "https://www.mateusz-bogacz-drewniak.pl/pl",
+    languages: {
+      pl: "https://www.mateusz-bogacz-drewniak.pl/pl",
+      en: "https://www.mateusz-bogacz-drewniak.pl/en",
+    },
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function RootLayout({
@@ -58,6 +72,21 @@ export default async function RootLayout({
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Mateusz Bogacz Drewniak",
+            url: "https://www.mateusz-bogacz-drewniak.pl",
+            sameAs: [
+              "https://github.com/TWOJ_GITHUB",
+              "https://www.linkedin.com/in/TWOJ_LINKEDIN",
+            ],
+          }),
+        }}
+      />
     </html>
   );
 }

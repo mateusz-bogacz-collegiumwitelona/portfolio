@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/api"],
     },
     sitemap: "https://www.mateusz-bogacz-drewniak.pl/sitemap.xml",
   };
